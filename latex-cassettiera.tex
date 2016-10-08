@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[left=01cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\newcommand{\CASS}[1]{\begin{tikzpicture}
+\node[rectangle,draw,text width=2.5cm,minimum height=0.5cm,align=center](a){};
+\node[above=4mm of a,anchor=south,rectangle,draw,minimum width=1.5cm,minimum height=0.2cm,align=center](b){};
+\draw (a.north west) -- (b.north west);
+\draw (a.south west) -- (b.south west);
+\draw (a.north east) -- (b.north east);
+\draw (a.south east) -- (b.south east);
+\node[rectangle,draw,fill=white,text width=2.5cm,minimum height=0.5cm,align=center] at (a){\texttt{#1}};
+\node[minimum height=0pt,inner sep=0pt,below =3mm of a,fill=red]{};
+\end{tikzpicture}}
+
+\newcommand{\CASSETTIERA}[1]{
+\begin{minipage}{2.6cm}
+    \CASS{08#10}
+    \CASS{08#11}
+    \CASS{08#12}
+    \CASS{08#13}
+    \CASS{08#14}
+    \CASS{08#15}
+    \CASS{08#16}
+    \CASS{08#17}
+    \CASS{08#18}
+    \CASS{08#19}
+    \CASS{08#1A}
+    \CASS{08#1B}
+    \CASS{08#1C}
+    \CASS{08#1D}
+    \CASS{08#1E}
+    \CASS{08#1F}
+\end{minipage}
+\begin{minipage}{0.4cm}
+
+\end{minipage}    
+}
+
+
+\begin{document}
+  \pagenumbering{gobble}
+  \CASSETTIERA{A}
+  \CASSETTIERA{B}
+  \CASSETTIERA{C}
+  \CASSETTIERA{D}
+  \CASSETTIERA{E}
+  \CASSETTIERA{F}
+\end{document}
